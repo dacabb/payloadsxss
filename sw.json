@@ -3,6 +3,6 @@
   "info": {
     "title": "XSS",
     "version": "1.0",
-    "description": "<svg onload=alert(1)>"
+    "description": "<marquee>dddd"
   }
 }
