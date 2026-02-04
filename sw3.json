@@ -3,6 +3,6 @@
   "info": {
     "title": "XSS",
     "version": "1.0",
-    "description": "<marquee>dddd"
+    "description": "<marquee onmouseover=prompt(2)>dddd"
   }
 }
