@@ -1,0 +1,76 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://cdn.jsdelivr.net/gh/dacabb/payloadsxss@main/test.json",
+  "type": "Manifest",
+  "label": {
+    "en": ["PAYLOAD_1_label"]
+  },
+  "summary": {
+    "en": ["PAYLOAD_2_summary"]
+  },
+  "metadata": [
+    {
+      "label": {"en": ["Test"]},
+      "value": {"en": ["PAYLOAD_3_metadata_value"]}
+    },
+    {
+      "label": {"en": ["PAYLOAD_4_metadata_label"]},
+      "value": {"en": ["normal value"]}
+    }
+  ],
+  "requiredStatement": {
+    "label": {"en": ["PAYLOAD_5_requiredStatement_label"]},
+    "value": {"en": ["PAYLOAD_6_requiredStatement_value"]}
+  },
+  "homepage": [
+    {
+      "id": "https://example.com",
+      "type": "Text",
+      "label": {"en": ["PAYLOAD_7_homepage_label"]}
+    }
+  ],
+  "provider": [
+    {
+      "id": "https://example.com",
+      "type": "Agent",
+      "label": {"en": ["PAYLOAD_8_provider_label"]}
+    }
+  ],
+  "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "items": [
+    {
+      "id": "https://example.com/canvas/1",
+      "type": "Canvas",
+      "label": {"en": ["PAYLOAD_9_canvas_label"]},
+      "width": 1000,
+      "height": 1000,
+      "metadata": [
+        {
+          "label": {"en": ["Test"]},
+          "value": {"en": ["PAYLOAD_10_canvas_metadata"]}
+        }
+      ],
+      "items": [
+        {
+          "id": "https://example.com/page/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.com/anno/1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://picsum.photos/1000/1000",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1000,
+                "height": 1000
+              },
+              "target": "https://example.com/canvas/1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
