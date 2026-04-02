@@ -1,0 +1,9 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://TU-DOMINIO.com/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "none": ["<img src=x onerror=alert(1)>"]
+  },
+  "items": []
+}
