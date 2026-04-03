@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Image: </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="ocr-system" content="Transkribus "/>
+      <meta name="ocr-capabilities" content="ocr_page ocr_par ocr_line ocrx_word"/>
+   </head>
+   <body>
+      <div class="ocr_page"
+           id="Page1"
+           title="image ; bbox 0 0 3508 4963; ppageno 0">
+         <p class="ocr_par"
+            dir="ltr"
+            id="rOBE6_6"
+            title="bbox 845 305 3042 552">
+            <span class="ocr_line" id="rOBE6_6l1" title="bbox 844 313 3051 525">
+               <span class="ocrx_word" id="word_d1e54" title="bbox 783 313 1519 525">¡ESTA</span>
+               <span class="ocrx_word" id="word_d1e56" title="bbox 1334 313 1763 525">PÁGINA</span>
+               <span class="ocrx_word" id="word_d1e58" title="bbox 1580 313 2377 525">HA</span>
+               <span class="ocrx_word" id="word_d1e60" title="bbox 2193 313 2622 525">SIDO</span>
+               <span class="ocrx_word" id="word_d1e62" title="bbox 2438 313 2990 525">HACKEADA</span>
+            </span>
+         </p>
+         <p class="ocr_par"
+            dir="ltr"
+            id="rRulX_22"
+            title="bbox 306 615 2676 4701">
+            <span class="ocr_line" id="rRulX_22l1" title="bbox 399 646 2364 767">
+               <span class="ocrx_word" id="word_d1e70" title="bbox 364 646 785 767">ESTE</span>
+               <span class="ocrx_word" id="word_d1e72" title="bbox 680 646 926 767">ES</span>
+               <span class="ocrx_word" id="word_d1e74" title="bbox 820 646 1066 767">UN</span>
+               <span class="ocrx_word" id="word_d1e76" title="bbox 960 646 1592 767">TEXTO</span>
+               <span class="ocrx_word" id="word_d1e78" title="bbox 1487 646 1943 767">MODIFICADO</span>
+               <span class="ocrx_word" id="word_d1e80" title="bbox 1803 646 2364 767">POR EL ATACANTE</span>
+            </span>
+            <span class="ocr_line" id="rRulX_22l2" title="bbox 300 758 2357 870">
+               <span class="ocrx_word" id="word_d1e82" title="bbox 265 758 893 870">EL</span>
+               <span class="ocrx_word" id="word_d1e84" title="bbox 788 758 997 870">VISOR</span>
+               <span class="ocrx_word" id="word_d1e86" title="bbox 893 758 1102 870">CARGA</span>
+               <span class="ocrx_word" id="word_d1e88" title="bbox 997 758 1241 870">HOCR</span>
+               <span class="ocrx_word" id="word_d1e90" title="bbox 1137 758 1451 870">EXTERNOS</span>
+            </span>
+            <span class="ocr_line" id="rRulX_22l3" title="bbox 934 863 1496 965">
+               <span class="ocrx_word" id="word_d1e99" title="bbox 899 863 1110 965">PERO</span>
+               <span class="ocrx_word" id="word_d1e101" title="bbox 1004 863 1215 965">CON</span>
+               <span class="ocrx_word" id="word_d1e103" title="bbox 1110 863 1356 965">EL</span>
+               <span class="ocrx_word" id="word_d1e105" title="bbox 1215 863 1496 965">FORMATO</span>
+            </span>
+            <span class="ocr_line" id="rRulX_22l4" title="bbox 948 969 1311 1043">
+               <span class="ocrx_word" id="word_d1e107" title="bbox 908 969 1150 1043">CORRECTO</span>
+               <span class="ocrx_word" id="word_d1e109" title="bbox 1029 969 1271 1043">SE</span>
+               <span class="ocrx_word" id="word_d1e111" title="bbox 1109 969 1311 1043">MUESTRA</span>
+            </span>
+            <span class="ocr_line" id="rRulX_22l6" title="bbox 937 1078 2697 1165">
+               <span class="ocrx_word" id="word_d1e115" title="bbox 906 1078 1095 1165">ESTA</span>
+               <span class="ocrx_word" id="word_d1e117" title="bbox 1000 1078 1189 1165">ES</span>
+               <span class="ocrx_word" id="word_d1e119" title="bbox 1094 1078 1283 1165">UNA</span>
+               <span class="ocrx_word" id="word_d1e121" title="bbox 1188 1078 1439 1165">PRUEBA</span>
+               <span class="ocrx_word" id="word_d1e123" title="bbox 1346 1078 1503 1165">DE</span>
+               <span class="ocrx_word" id="word_d1e125" title="bbox 1408 1078 1879 1165">CONCEPTO</span>
+               <span class="ocrx_word" id="word_d1e128" title="bbox 1786 1078 2006 1165">DE</span>
+               <span class="ocrx_word" id="word_d1e130" title="bbox 1911 1078 2131 1165">PHISHING</span>
+            </span>
+         </p>
+      </div>
+   </body>
+</html>
