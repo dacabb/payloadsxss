@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Fake OCR</title>
+</head>
+<body>
+  <div class="ocr_page" title="image test; bbox 0 0 3508 4963">
+    <div class="ocr_carea">
+      <p class="ocr_par">
+        <span class="ocr_line">
+          <span class="ocrx_word" title="bbox 100 100 800 200">
+            SU SESIÓN HA EXPIRADO
+          </span>
+        </span>
+        <span class="ocr_line">
+          <span class="ocrx_word" title="bbox 100 300 900 400">
+            Por favor, introduzca su contraseña para continuar
+          </span>
+        </span>
+        <span class="ocr_line">
+          <span class="ocrx_word" title="bbox 100 500 300 600">
+            Contraseña:
+          </span>
+          <span class="ocrx_word" title="bbox 400 500 700 600">
+            ************
+          </span>
+        </span>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
