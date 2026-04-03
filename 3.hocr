@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>XSS Payloads Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="ocr-system" content="Transkribus "/>
+      <meta name="ocr-capabilities" content="ocr_page ocr_par ocr_line ocrx_word"/>
+   </head>
+   <body>
+      <div class="ocr_page"
+           id="Page1"
+           title="image ; bbox 0 0 3508 4963; ppageno 0">
+         
+         <!-- Payload 1: Texto normal con etiquetas visibles -->
+         <p class="ocr_par" dir="ltr" id="payload1" title="bbox 845 305 3042 552">
+            <span class="ocr_line" title="bbox 844 313 3051 525">
+               <span class="ocrx_word" title="bbox 783 313 1519 525">PRUEBA</span>
+               <span class="ocrx_word" title="bbox 1334 313 1763 525">DE</span>
+               <span class="ocrx_word" title="bbox 1580 313 2377 525">ETIQUETAS</span>
+               <span class="ocrx_word" title="bbox 2193 313 2622 525">HTML</span>
+            </span>
+         </p>
+
+         <!-- Payload 2: Etiqueta <marquee> (texto que se mueve) -->
+         <p class="ocr_par" dir="ltr" id="payload2" title="bbox 306 600 2676 700">
+            <span class="ocr_line" title="bbox 399 646 2364 767">
+               <span class="ocrx_word" title="bbox 364 646 785 767">&lt;marquee&gt;ESTE TEXTO DEBERÍA MOVERSE&lt;/marquee&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 3: Etiqueta <li> (lista) -->
+         <p class="ocr_par" dir="ltr" id="payload3" title="bbox 306 750 2676 850">
+            <span class="ocr_line" title="bbox 399 800 2364 900">
+               <span class="ocrx_word" title="bbox 364 800 785 900">&lt;li&gt;Elemento de lista 1&lt;/li&gt;</span>
+            </span>
+            <span class="ocr_line" title="bbox 399 920 2364 1020">
+               <span class="ocrx_word" title="bbox 364 920 785 1020">&lt;li&gt;Elemento de lista 2&lt;/li&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 4: Etiqueta <u> (subrayado) -->
+         <p class="ocr_par" dir="ltr" id="payload4" title="bbox 306 1050 2676 1150">
+            <span class="ocr_line" title="bbox 399 1100 2364 1200">
+               <span class="ocrx_word" title="bbox 364 1100 785 1200">&lt;u&gt;Este texto debería estar subrayado&lt;/u&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 5: Etiqueta <a> con enlace -->
+         <p class="ocr_par" dir="ltr" id="payload5" title="bbox 306 1200 2676 1300">
+            <span class="ocr_line" title="bbox 399 1250 2364 1350">
+               <span class="ocrx_word" title="bbox 364 1250 785 1350">&lt;a href='https://www.google.com'&gt;Enlace a Google&lt;/a&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 6: XSS con <img> -->
+         <p class="ocr_par" dir="ltr" id="payload6" title="bbox 306 1400 2676 1500">
+            <span class="ocr_line" title="bbox 399 1450 2364 1550">
+               <span class="ocrx_word" title="bbox 364 1450 785 1550">&lt;img src=x onerror=alert('XSS')&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 7: XSS con <svg> -->
+         <p class="ocr_par" dir="ltr" id="payload7" title="bbox 306 1600 2676 1700">
+            <span class="ocr_line" title="bbox 399 1650 2364 1750">
+               <span class="ocrx_word" title="bbox 364 1650 785 1750">&lt;svg onload=alert('XSS SVG')&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 8: XSS con <script> -->
+         <p class="ocr_par" dir="ltr" id="payload8" title="bbox 306 1800 2676 1900">
+            <span class="ocr_line" title="bbox 399 1850 2364 1950">
+               <span class="ocrx_word" title="bbox 364 1850 785 1950">&lt;script&gt;alert('XSS Script')&lt;/script&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 9: Texto con formato HTML visible (negrita simulada) -->
+         <p class="ocr_par" dir="ltr" id="payload9" title="bbox 306 2000 2676 2100">
+            <span class="ocr_line" title="bbox 399 2050 2364 2150">
+               <span class="ocrx_word" title="bbox 364 2050 785 2150">&lt;b&gt;Texto en negrita&lt;/b&gt;</span>
+            </span>
+         </p>
+
+         <!-- Payload 10: Texto con combinación de etiquetas -->
+         <p class="ocr_par" dir="ltr" id="payload10" title="bbox 306 2200 2676 2350">
+            <span class="ocr_line" title="bbox 399 2250 2364 2400">
+               <span class="ocrx_word" title="bbox 364 2250 785 2400">&lt;marquee&gt;&lt;li&gt;&lt;a href='#'&gt;Click&lt;/a&gt;&lt;/li&gt;&lt;/marquee&gt;</span>
+            </span>
+         </p>
+
+      </div>
+   </body>
+</html>
