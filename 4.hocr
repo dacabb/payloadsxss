@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>hOCR XSS + HTML Injection Test 2026</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <meta name="ocr-system" content="XSS Test"/>
+</head>
+<body>
+   <div class="ocr_page" id="Page1" title="image ; bbox 0 0 3508 4963; ppageno 0">
+
+      <!-- 1. RAW <script> directo dentro del span -->
+      <p class="ocr_par" title="bbox 100 100 3000 200">
+         <span class="ocr_line" title="bbox 100 100 3000 200">
+            <span class="ocrx_word" title="bbox 100 100 3000 200"><script>alert('XSS 1 - RAW SCRIPT')</script></span>
+         </span>
+      </p>
+
+      <!-- 2. <img> con onerror -->
+      <p class="ocr_par" title="bbox 100 300 3000 400">
+         <span class="ocr_line" title="bbox 100 300 3000 400">
+            <span class="ocrx_word" title="bbox 100 300 3000 400">PRUEBA<img src=x onerror=alert('XSS 2 - IMG ONERROR')></span>
+         </span>
+      </p>
+
+      <!-- 3. <svg> onload -->
+      <p class="ocr_par" title="bbox 100 500 3000 600">
+         <span class="ocr_line" title="bbox 100 500 3000 600">
+            <span class="ocrx_word" title="bbox 100 500 3000 600">PRUEBA<svg/onload=alert('XSS 3 - SVG')></svg></span>
+         </span>
+      </p>
+
+      <!-- 4. Romper estructura (cerrar spans y p) -->
+      <p class="ocr_par" title="bbox 100 700 3000 800">
+         <span class="ocr_line" title="bbox 100 700 3000 800">
+            <span class="ocrx_word" title="bbox 100 700 3000 800">PRUEBA</span></span></span></p>
+            <script>alert('XSS 4 - BREAKOUT')</script>
+         <span class="ocrx_word" title="bbox 100 700 3000 800">CONTINUA</span>
+      </p>
+
+      <!-- 5. Inyección en atributo title (romper comillas) -->
+      <p class="ocr_par" title="bbox 100 900 3000 1000">
+         <span class="ocr_line" title="bbox 100 900 3000 1000">
+            <span class="ocrx_word" title="bbox 100 900 3000 1000&quot;><img src=x onerror=alert('XSS 5 - TITLE BREAK')>&quot;">INYECCION TITLE</span>
+         </span>
+      </p>
+
+      <!-- 6. HTML clásico (marquee, para ver si renderiza algo) -->
+      <p class="ocr_par" title="bbox 100 1100 3000 1200">
+         <span class="ocr_line" title="bbox 100 1100 3000 1200">
+            <span class="ocrx_word" title="bbox 100 1100 3000 1200"><marquee>🚨 ESTE TEXTO DEBERÍA MOVERSE SI HAY HTML INJECTION 🚨</marquee></span>
+         </span>
+      </p>
+
+      <!-- 7. <details> + <summary> (HTML5) -->
+      <p class="ocr_par" title="bbox 100 1300 3000 1400">
+         <span class="ocr_line" title="bbox 100 1300 3000 1400">
+            <span class="ocrx_word" title="bbox 100 1300 3000 1400"><details><summary>Click aquí si ves HTML</summary>HTML INJECTION FUNCIONANDO</details></span>
+         </span>
+      </p>
+
+      <!-- 8. XSS con template literals -->
+      <p class="ocr_par" title="bbox 100 1500 3000 1600">
+         <span class="ocr_line" title="bbox 100 1500 3000 1600">
+            <span class="ocrx_word" title="bbox 100 1500 3000 1600"><script>alert`XSS 8 - TEMPLATE`</script></span>
+         </span>
+      </p>
+
+      <!-- 9. Payload poliglota (funciona en muchos parsers) -->
+      <p class="ocr_par" title="bbox 100 1700 3000 1800">
+         <span class="ocr_line" title="bbox 100 1700 3000 1800">
+            <span class="ocrx_word" title="bbox 100 1700 3000 1800"><img src="x" onerror="alert('XSS 9 - POLYGLOT')"></span>
+         </span>
+      </p>
+
+      <!-- 10. Intento de <a> con javascript: (por si el visor permite) -->
+      <p class="ocr_par" title="bbox 100 1900 3000 2000">
+         <span class="ocr_line" title="bbox 100 1900 3000 2000">
+            <span class="ocrx_word" title="bbox 100 1900 3000 2000"><a href="javascript:alert('XSS 10 - LINK')">CLICK ME</a></span>
+         </span>
+      </p>
+
+   </div>
+</body>
+</html>
