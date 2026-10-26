@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>test</name>
+    <Style id="bigarea">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>6600ff00</color>
+      </PolyStyle>
+    </Style>
+    <Placemark id="x1">
+      <name>test1</name>
+      <description><![CDATA[<iframe src="https://s.geo.admin.ch/qh0fln4ogewn" width="340" height="180"></iframe><br/><a href="https://s.geo.admin.ch/qh0fln4ogewn">XSS</a>]]></description>
+      <styleUrl>#bigarea</styleUrl>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              6.0,45.5,0
+              9.5,45.5,0
+              9.5,48.0,0
+              6.0,48.0,0
+              6.0,45.5,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+  </Document>
+</kml>
